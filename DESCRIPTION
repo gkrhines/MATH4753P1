@@ -1,0 +1,10 @@
+Package: MATH4753P1
+Type: Package
+Title: Introductory Package
+Version: 0.1.0
+Author: Grant Rhines
+Maintainer: Grant Rhines <gkrhines21@ou.edu>
+Description: This is a test package.
+License: MIT
+Encoding: UTF-8
+LazyData: true
