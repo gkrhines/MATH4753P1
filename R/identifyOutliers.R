@@ -13,8 +13,8 @@ identityOutliers <- function(vector)
   output <- list()
 
   #Setting up the output object
-  output[["Possible"]] <- c(NA)
-  output[["Outlier"]] <- c(NA)
+  output[["Possible"]] <- c(999)
+  output[["Outlier"]] <- c(999)
 
   for(i in 1:length(vector))
   {
@@ -30,9 +30,25 @@ identityOutliers <- function(vector)
     }
   }
   
-  #Replacing the filler NAs in the output list
-  output[["Possible"]] <- output[["Possible"]][!is.na(test[["Possible"]])]
-  output[["Outlier"]] <- output[["Outlier"]][!is.na(test[["Outlier"]])]
+  #Removing the filler 999s in the output list
+  if(length(output[["Possible"]]) > 1)
+  {
+    output[["Possible"]] <- output[["Possible"]][-1]
+  }
+  else
+  {
+    output[["Possible"]] <- NA
+  }
+      
+  #Removing the filler 999s in the output list
+  if(length(output[["Outlier"]]) > 1)
+  {
+    output[["Outlier"]] <- output[["Outlier"]][-1]
+  }
+  else
+  {
+    output[["Outlier"]] <- NA
+  }  
 
   return(output)
 }
