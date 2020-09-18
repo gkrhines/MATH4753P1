@@ -3,52 +3,36 @@
 #'
 #' @param vector
 #'
-#' @return a list of length two. The first element of the list comtains all values that are possibly outliers, while the second element contain all values that are definitely outliers
+#' @return a dataframe with two columns. First column shows us the value and the second column ("Status") identifies whether a value is "Not Outlier", "Possible", or "Outlier"
 #' @export
 #'
 #' @examples
 #' x <- c(4,90,100,95); identifyOutliers(x)
 identifyOutliers <- function(vector)
 {
-  output <- list()
-
-  #Setting up the output object
-  output[["Possible"]] <- c(999)
-  output[["Outlier"]] <- c(999)
-
+  labels <- c()
+  
   for(i in 1:length(vector))
   {
     tempZ <- (vector[i]-mean(vector))/sd(vector)
-
+    
     if(abs(tempZ)>=2 & abs(tempZ)<=3)
     {
-      output[["Possible"]] <- append(output[["Possible"]], vector[i])
+      labels <- append(labels, "Possible")
     }
     else if(abs(tempZ) >= 3)
     {
-      output[["Outlier"]] <- append(output[["Outlier"]], vector[i])
+      labels <- append(labels, "Outlier")
+    }
+    else
+    {
+      labels <- append(labels, "Not Outlier")
     }
   }
   
-  #Removing the filler 999s in the output list
-  if(length(output[["Possible"]]) > 1)
-  {
-    output[["Possible"]] <- output[["Possible"]][-1]
-  }
-  else
-  {
-    output[["Possible"]] <- NA
-  }
-      
-  #Removing the filler 999s in the output list
-  if(length(output[["Outlier"]]) > 1)
-  {
-    output[["Outlier"]] <- output[["Outlier"]][-1]
-  }
-  else
-  {
-    output[["Outlier"]] <- NA
-  }  
-
+  #Creating a data.frame out of our results
+  output <- data.frame("Value" = vector, "Status" = labels)
+  
+  
   return(output)
 }
