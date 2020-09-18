@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' x <- c(4,90,100,95); identifyOutliers(x)
-identityOutliers <- function(vector)
+identifyOutliers <- function(vector)
 {
   output <- list()
 
