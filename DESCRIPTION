@@ -10,3 +10,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/gkrhines/MATH4753P1
 BugReports: https://github.com/gkrhines/MATH4753P1/issues
+RoxygenNote: 7.1.1
