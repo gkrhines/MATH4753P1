@@ -2,3 +2,4 @@
 
 export(identifyOutliers)
 export(myF)
+export(mysample)
