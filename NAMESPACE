@@ -2,5 +2,6 @@
 
 export(identifyOutliers)
 export(myF)
+export(mycltb)
 export(myncurve)
 export(mysample)
