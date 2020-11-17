@@ -1,5 +1,7 @@
 #' 95% Confidence Interval of the Mean
 #'
+#' Genearates a 95% CI of the mean for a given set of data.
+#'
 #' @param x a single set of sample statistics
 #'
 #' @return a vector of length 2; the first value is the lower limit and the second its upper limit
