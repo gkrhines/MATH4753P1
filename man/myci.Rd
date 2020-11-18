@@ -2,7 +2,7 @@
 % Please edit documentation in R/myci.R
 \name{myci}
 \alias{myci}
-\title{95% Confidence Interval of the Mean}
+\title{95 Percent Confidence Interval of the Mean}
 \usage{
 myci(x)
 }
@@ -13,7 +13,7 @@ myci(x)
 a vector of length 2; the first value is the lower limit and the second its upper limit
 }
 \description{
-95% Confidence Interval of the Mean
+Genearates a 95 Percent CI of the mean for a given set of data.
 }
 \examples{
 myci(c(6,7,5,4,5,6,7,5,4,4,5,5,6,5,4,4,4,5))

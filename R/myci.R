@@ -1,6 +1,6 @@
-#' 95% Confidence Interval of the Mean
+#' 95 Percent Confidence Interval of the Mean
 #'
-#' Genearates a 95% CI of the mean for a given set of data.
+#' Genearates a 95 Percent CI of the mean for a given set of data.
 #'
 #' @param x a single set of sample statistics
 #'
